@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- INCLUDE THIS FIRST OR STUFF BREAKS!! -->
+	<script src="assets/js/jquery.min.js"></script>
+	
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pratt - Free Bootstrap 3 Theme">
+    <meta name="author" content="Alvarez.is - BlackTie.co">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="http://www.codingcoffee.com/plastidDB/assets/ico/favicon.ico" type="image/x-icon" />
+
+    <title>The Coffee Project</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    
+    
+  
+    <style>
+        input.results
+        {
+            width: 200px;
+            background-color: white;
+            z-index:5;
+        }
+            
+        div.results
+        {
+            z-index:5;
+            top: 45%;
+            height: 10px;
+        }
+    </style>
+    
+    
+    <script src="assets/js/smoothscroll.js"></script>
+    
+    <!-- Taxonomic Auto-Complete -->
+    <script src="assets/js/taxonomicAutoComplete.php"></script>
+    
+</head>
+
+<!-- ===========================================================================
+                        BODY
+     ========================================================================-->
+     
+<body onload="clearString()" data-spy="scroll" data-offset="0" data-target="#navigation">
+  <!-- BEGIN NAVIGATION BAR -->
+  
+    <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	  </button>
+	  <a class="navbar-brand" href="#"><b>The Coffee Project</b></a>
+	</div>
+	<div class="navbar-collapse collapse">
+	  <ul class="nav navbar-nav">
+	    <li class="active"><a href="#home" class="smothscroll">Home</a></li>
+	    <li><a href="#search" class="smothscroll">Basics</a></li>
+	    <li><a href="#about" class="smothScroll">Brew</a></li>
+	    <li><a href="#contact" class="smothScroll">Contact</a></li>
+	  </ul>
+	</div><!--/.nav-collapse -->
+      </div>
+    </div>
+    
+  <!-- END NAVIGATION BAR -->
+
+
+  <!--BEGIN HOME SECTION-->
+  
+    <section id="home" name="home"></section>
+    <div id="headerwrap">
+      <div class="container">
+      
+        <!-- ==== BEGIN CONTACT PHP ==== -->
+        <?php
+          function processContact()
+          {
+            $name = $_POST[contactName];
+            $email = $_POST[contactEmail];
+            $message = $_POST[contactMessage];
+            $finalMessage = "NAME: \n" . $name . "\n\n" . "MESSAGE: \n" . $message;
+
+            $to = "rhartsock423@gmail.com";
+            $subject = "Plastid DB Contact Form";
+
+            mail($to, $subject, $finalMessage, "From: $email\n"); 
+
+            echo '<div class="alert alert-success" style="background-color:#A3FB66; color:#576b4a;">Thanks for contacting us!</div>';
+          }
+          
+          if(isset($_POST['contactSubmit']))
+          {
+            processContact();
+          } 
+        ?>
+        <!-- ==== END CONTACT PHP ==== -->
+        
+	<div class="row centered">
+	  <div class="col-lg-12">
+	    <h1>
+	      Welcome To <span style="font-size:120%; border-bottom: solid 2px;"><br/>The Coffee Project
+	     <!-- <b>Verdant</b></span> <span class="glyphicon glyphicon-leaf"></span> -->
+	    </h1>
+            <!--<h2 style="color:white; font-size:280%">The Plastid Database</h2>-->
+	    <h3 style="color:gray">A Ryan Hartsock Production</h3>
+	    <br>
+	  </div>
+	    		
+	  <div class="col-lg-2">
+	    <h5>Beans</h5>
+	    <p>Learn how to choose the best coffee beans.</p>
+	    <img class="hidden-xs hidden-sm hidden-md" src="assets/img/arrow1.png">
+	  </div>
+	  
+	  <div class="col-lg-8">
+	    <img class="img-responsive" src="assets/img/plastidHomeDarkGreen.png" alt="">
+	  </div>
+	  
+	  <div class="col-lg-2">
+	    <br>
+	    <img class="hidden-xs hidden-sm hidden-md" src="assets/img/arrow2.png">
+	    <h5>Brew</h5>
+	    <p>Brew with both tried and true as well as state of the art hand brewing systems.</p>			
+	  </div>
+	</div>
+	<br>
+      </div> <!--/ .container -->
+    </div><!--/ #headerwrap -->
+    
+  <!--END HOME SECTION-->
+  
+  
+  
+   <!--BEGIN ABOUT SECTION-->
+  
+    <section id="search" name="search"></section>
+    <!-- FEATURES WRAP -->
+      <div id="features">
+        <div class="container">
+	  <div class="row">
+	    <u><h1 class="centered">Basics</h1></u>
+	    <br><br>
+	    
+			
+            <div class="col-lg-6 col-lg-offset-2">
+	      <br>
+	      
+	      <!-- ACCORDION -->
+	        <div class="accordion ac" id="accordion1">
+	        
+		  <div class="accordion-group">
+		    <div class="accordion-heading">
+		      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse1">
+		        Beans
+		      </a>
+		    </div><!-- /accordion-heading -->
+		      <div id="collapse1" class="accordion-body collapse"> <!--in-->
+		        <div class="accordion-inner">
+			  	<h3>Blends</h3>
+			  	<p>
+			  	Coffee blends are created when more than one type of bean, or beans from more that one grower are mixed
+			  	together. The beans can be mixed either pre or post roast. Blends are very popular for a variety of reasons.
+			  	From an economics standpoint, blends can be cheaper. If you mix high quality beans with a mid to low quality beans
+			  	you can still end up with a good product for less cost.
+			  	</p>
+			  	<p>
+			  	More importantly though, blends can combine the best features and characteristics of different beans to 
+			  	deliver a product that is really better than the sum of its parts. The most common is an espresso blend.
+			  	An espresso needs to have an oily, dark coffee to create a good crema, but you also want the brightness and 
+			  	acidity of a light roast to cut through some of the richness of an espresso. As with anything, finding a balance
+			  	is crucial, and blends allow for just that.
+			  	</p>
+			  	
+			  	<h3>Single Origins</h3>
+			  	<p>
+			  	Unlike blends, in a single origin coffee all of the beans originate from the same place. This is great for 
+			  	showing off the characteristics of various regions and plant varieties. For instance, the volcanic soils of
+			  	Hawaii and Costa Rica both create a delightful acidity and brightness in the coffee grown in the region, 
+			  	but the coffee from Hawaii is often sweeter and fruitier than the coffee from Costa Rica. 
+			  	</p>
+			  	
+			  	<p>
+			  	Single origins are a great way to experience a small part of another country and culture. The variety that you
+			  	will find in single origin coffee is astonishing. Even coffee from the same region but grown on different 
+			  	farms only a couple of miles apart can have staggering differences in flavor and aroma. If you want to be bold
+			  	and adventurous, than single origin is the way to go.
+			  	</p>
+			  	
+			  	<h3>Light Roast</h3>
+			  	<p>
+			  	Light roast coffees are, as their name suggests, lighter in color than dark roasts. This is because the 
+			  	roasting process stops much sooner on a light roast than on a dark roast. Because a light roast is 
+			  	placed under less heat, you will get much less of the roast flavor. This is often best for single origin
+			  	coffee because the shorter roast time preserves more of the origin characteristics of the beans. Light roast
+			  	often produces less oil and creates a lighter bodied cup where the acidity an brightness of the coffee can really shine.
+			  	Also, light roasts have slightly more caffeine than dark roasts, so it might be the best choice for a morning wake up.   
+			  	</p>
+			  	 <img src="assets/img/kuva.jpg" alt="Hand" height="30%" width="30%">
+		         <img src="assets/img/eth.jpg" alt="Hand" height="30%" width="30%">
+		         <br>
+		         Brazil Ipanema Dulce (left) and Ethiopian Yirgacheffe (right).
+		         <br><br>
+		         
+			  	<h3>Dark Roast</h3>
+			  	<p>
+			  	In a dark roast, most of the origin characteristics have been replaced by the flavors and aromas produced
+			  	by extended roasting. The added roast time often draws more oil out of the bean so you will see a shinier bean
+			  	in the bag and have a more full bodied, rich coffee in the cup. Dark roast is the standard for Italian and
+			  	French blends and makes up the bulk of espresso blends. While a dark roast may not be the way to preserve the 
+			  	delicate characteristics of a single origin bean, increased oil in a dark roast helps create a 
+			  	thicker, creamy crema on top of an espresso.
+			  	</p>
+			  	<img src="assets/img/sumatra.jpg" alt="Hand" height="30%" width="30%">
+		         <img src="assets/img/guat.jpg" alt="Hand" height="30%" width="30%">
+		         <br>
+		         Sumatra Tano Batak (left) and Guatemalan (right).
+		         <br><br>
+		         
+		         <h3>Green</h3>
+			  	<p>
+			  	Green coffee is simply coffee that has been washed and dried but not roasted. This is the starting product
+			  	when the coffee arrives at the roaster. From here it can be mixed with other coffee to form a blend or roasted 
+			  	alone as a single origin.
+			  	</p>
+			  	 <img src="assets/img/haw.jpg" alt="Hand" height="30%" width="30%">
+		         <br>
+		         Hawaiian green coffee.
+		         <br><br>
+			     			     
+			</div><!-- /accordion-inner -->
+		      </div><!-- /collapse -->
+		  </div><!-- /accordion-group -->
+		  
+		  <br>
+		
+		  <div class="accordion-group">
+		    <div class="accordion-heading">
+		      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse2">
+		        Grind
+		      </a>
+		    </div>
+		    
+		    <div id="collapse2" class="accordion-body collapse">
+		      <div class="accordion-inner">
+		      <p>
+		        Freshly ground coffee is a must. More than any other step in the brewing process, 
+		        grinding your coffee fresh at each use will make the most noticeable impact on the final product.
+		        The coffee experience is two parts, aromatics and taste and oxygen is the enemy of both. 
+		        As the coffee begins to oxidize the aroma disappears and the flavor becomes stale.
+		        </p>
+		        <p>
+		        The best way to combat the oxidation process is to reduce the amount of surface area exposed to oxygen.
+		        Pre-ground coffee is almost all surface area and therefore oxidizes very quickly. Whole bean coffee on the other hand has
+		        much less surface area and is able to stay fresh for much longer, especially when stored in an airtight container.
+		        </p>
+		        
+		      	<h3>Grinder</h3>
+		        <h4>Conical Burr Grinder</h4>
+		        <p>
+		        The conical burr grinder is the best way to grind coffee. It works by smashing the beans in between an angled spindle
+		        and a ring. Usually both the spindle and ring are made with ridges to keep the coffee in place. By adjusting the space
+		        between the spindle and ring you can adjust the coarseness of the coffee. A conical burr grinder is the only grinder
+		        capable of grinding coarse enough for a French Press all the way to ultra fine espresso or Turkish coffee.
+		        </p>
+		        <p>
+		        Because a conical burr grinder relies on pressure instead of speed to break the beans it creates much less friction
+		        and therefore much less heat than other grinders. This results is a fresher tasting cup of coffee. Additionally
+		        a conical burr grinder is the most accurate method for grinding coffee. Because every bean goes through the same 
+		        burr assembly all of the grounds are the same size. Consistent size grounds leads to an even extraction. If some of the 
+		        coffee is very coarse and some very thin you will have both over extraction and bitterness as well as under extraction and 
+		        a weak cup of coffee.
+		        </p>
+		        <p>
+		        Burr grinders can be found in both <a href="http://amzn.to/13eGqpS">electric</a> and <a href="http://amzn.to/1yXHxpY">elbow-grease</a> powered varieties.
+		        </p>
+		         <img src="assets/img/b1.jpg" alt="Hand" height="30%" width="30%">
+		         <img src="assets/img/b2.jpg" alt="Hand" height="30%" width="30%">
+		         <img src="assets/img/b3.jpg" alt="Hand" height="30%" width="30%">
+		         <br>
+		         Hario Mini Mill Conical Burr Grinder
+		         <br><br>
+		         
+		        
+		        <h4>Blade Grinder</h4>
+		        <p>
+		        The blade grinder works by spinning incredibly fast and chopping the coffe beans into smaller pieces.
+		        Because of the speed required to chop the hard coffee beans, a tremendous amount of friction is generated around the blade.
+		        This causes the grounds to heat up and speed the oxidation process. While there might be a very small difference in flavor and
+		        overall quality due to the very short increased period of oxidation, the real downside to a blade grinder is the lack of consistency
+		        and flexibility. Because the grounds just fly about in the grinding chamber, there is no way to ensure that each bean is ground evenly.
+		        This can lead to uneven extraction and an underwhelming and bitter cup of coffee. Additionally, a blade grinder is not capable
+		        of grinding coffee finely enough to be used in espresso or Turkish coffee.
+		        </p>
+		        <p>
+		        Unlike burr grinders which come in both electric and elbow grease powered, blade grinders can only be found as  
+		        <a href="http://amzn.to/1vWZ6pi">electric models</a>.
+		        </p>
+		        <img src="assets/img/e1.jpg" alt="Hand" height="30%" width="30%">
+		        <img src="assets/img/e2.jpg" alt="Hand" height="30%" width="30%">
+		        <img src="assets/img/e3.jpg" alt="Hand" height="30%" width="30%">
+		         <br>
+		        Electric Blade Grinder
+		         <br><br>
+		        
+		         
+		        <h3>Coarseness</h3>
+		        <p>
+		        The coarseness that you grind your beans to will play a crucial role in making sure that
+		        your coffee is extracted properly. If the grind is too fine, you will have over extracted coffee.
+		        If the grind is too coarse, the coffee will be weak and under extracted. 
+		        </p>
+		        <p>
+		        Getting the correct coarseness is easiest on an electric burr grinder. Most of these machines have
+		        settings for each coarseness or brew method. With a hand burr grinder, you have to adjust the machine
+		        manually and rely on your judgement for the proper coarseness. This can take some practice. If you choose
+		        to use a manual burr grinder, it can be beneficial to use the professional grinder at your local
+		        supermarket or coffee shop to get a small sample of coffee correctly ground to each coarseness so that you can
+		        compare to what you are grinding at home. An electric blade grinder is the most difficult to create an even and 
+		        correct grind. Because the blade spins rapidly and chops whatever happens to be in front of it, it is nearly
+		        impossible to ensure that all of the coffee is ground evenly.
+		        </p>
+		        
+		        <img src="assets/img/coarse.jpg" alt="Hand" height="60%" width="60%">
+		         <br>
+		        Coarse (French Press)
+		         <br><br>
+		         
+		         <img src="assets/img/med.jpg" alt="Hand" height="60%" width="60%">
+		         <br>
+		        Medium (Pour Over)
+		         <br><br>
+		         
+		         <img src="assets/img/fine.jpg" alt="Hand" height="60%" width="60%">
+		         <br>
+		        Fine (AeroPress)
+		         <br><br>
+		         
+		         <img src="assets/img/veryfine.jpg" alt="Hand" height="60%" width="60%">
+		         <br>
+		        Very Fine (Espresso)
+		         <br><br>
+		        
+		        
+		      </div><!-- /accordion-inner -->
+		    </div><!-- /collapse -->
+		  </div><!-- /accordion-group -->
+		                
+		  <br>
+		
+		  <div class="accordion-group">
+		    <div class="accordion-heading">
+		      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse3">
+		        Water
+		      </a>
+		    </div>
+		    <div id="collapse3" class="accordion-body collapse">
+		      <div class="accordion-inner">
+		      	<h3>Filtered</h3>
+		        <p>
+		        Water makes up the bulk of your cup of coffee, so it is crucial to start with clean filtered water. 
+		        Tap water can contain a wide variety of metals and minerals and it is important to remove as many as possible
+		        before using it to make coffee. A great cup of coffee is a complex balance of acidity, body, subtle flavor and aroma,
+		        and hard, metallic or mineral heavy water can have a very noticeable negative effect on coffee by throwing off that delicate balance.
+		        </p>
+		        <p>
+		        A refrigerator with a built in water filter that is changed regularly works great, but if that is not an option, a 
+		        <a href="http://amzn.to/16d2IJQ">Brita Pitcher</a> works just as well.
+		        </p>
+		        <img src="assets/img/w1.jpg" alt="Hand" height="30%" width="30%">
+		        <img src="assets/img/w2.jpg" alt="Hand" height="30%" width="30%">
+		        <img src="assets/img/w3.jpg" alt="Hand" height="30%" width="30%">
+		         <br>
+		        Brita Filter Pitcher 
+		         <br><br>
+		      </div><!-- /accordion-inner -->
+		    </div><!-- /collapse -->
+		  </div><!-- /accordion-group -->
+		  
+		  <br>
+		                
+		  <div class="accordion-group">
+		    <div class="accordion-heading">
+		      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse4">
+		        Gear
+		      </a>
+		    </div>
+		    <div id="collapse4" class="accordion-body collapse">
+		      <div class="accordion-inner">
+		      	<h3>Electronics</h3>
+		      	<h4>Scale</h4>
+		        <p>Measuring beans by weight is far more accurate than by volume. Additionally, a scale makes it very
+		        easy to know how much water you have added to a brew.</p>
+		        <img src="assets/img/s1.jpg" alt="Hand" height="30%" width="30%">
+		        <img src="assets/img/s2.jpg" alt="Hand" height="30%" width="30%">
+		        <img src="assets/img/s3.jpg" alt="Hand" height="30%" width="30%">
+		         <br>
+		         American Weigh Scales Spice and Coffee Scale
+		         <br><br>
+		         
+		         <h4>Thermometer</h4>
+		         <p>Temperature is one of the most important variables in coffee brewing. A good digital thermometer
+		         will allow you to control and monitor this with ease.</p>
+		         <img src="assets/img/t1.jpg" alt="Hand" height="30%" width="30%">
+		         <img src="assets/img/t2.jpg" alt="Hand" height="30%" width="30%">
+		         <br>
+		         Digital Thermometer
+		         <br><br>
+		         
+		        <h3>Heat</h3>
+		        <p>An electric water kettle or a stove top version work equally well.</p>
+		         <img src="assets/img/h1.jpg" alt="Hand" height="30%" width="30%">
+		         <br>
+		         Tea Kettle
+		         <br><br>
+		        
+		        <h3>Containers</h3>
+		        
+		        <h4>Glass Decanter</h4>
+		        <p>Perfect vessel for holding your French Press brew or making a pour over.</p>
+		         <img src="assets/img/c3.jpg" alt="Hand" height="30%" width="30%">
+		         <img src="assets/img/c4.jpg" alt="Hand" height="30%" width="30%">
+		         <br>
+		         Glass Decanter
+		         <br><br>
+		         
+		        <h4>Steam Pitcher</h4>
+		        <p>Great for carefully pouring hot water or steaming milk at the espresso machine.</p>
+		         <img src="assets/img/c1.jpg" alt="Hand" height="30%" width="30%">
+		         <img src="assets/img/c2.jpg" alt="Hand" height="30%" width="30%">
+		         <br>
+		         Steam Pitcher
+		         <br><br>
+		         
+		        <h4>Mug</h4>
+		        <p>A glass or ceramic mug works best. Some metals can leave a metallic taste in the coffee.</p>
+		         <img src="assets/img/c5.jpg" alt="Hand" height="30%" width="30%">
+		         <img src="assets/img/c6.jpg" alt="Hand" height="30%" width="30%">
+		         <img src="assets/img/c7.jpg" alt="Hand" height="30%" width="30%">
+		         <br>
+		         8oz Coffee Mug
+		         
+		      </div><!-- /accordion-inner -->
+		    </div><!-- /collapse -->
+		  </div><!-- /accordion-group -->
+		  
+		  		
+		  
+		</div><!-- Accordion -->
+            </div>
+          </div>
+        </div><!--/ .container -->
+      </div><!--/ #features -->
+      
+  <!--END ABOUT SECTION-->
+   
+   
+   
+   
+  
+	
+	
+  <!--BEGIN ABOUT SECTION-->
+  
+    <section id="about" name="about"></section>
+    <!-- FEATURES WRAP -->
+      <div id="features">
+        <div class="container">
+	  <div class="row">
+	    <u><h1 class="centered">Brew</h1></u>
+	    <br><br>
+	    
+			
+            <div class="col-lg-6 col-lg-offset-2">
+	      <!--<h3>Methods</h3>-->
+	      <br>
+	      
+	      <!-- ACCORDION -->
+	        <div class="accordion ac" id="accordion2">
+	        
+		  <div class="accordion-group">
+		    <div class="accordion-heading">
+		      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+		        AeroPress
+		      </a>
+		    </div><!-- /accordion-heading -->
+		      <div id="collapseOne" class="accordion-body collapse"><!--in-->
+		        <div class="accordion-inner">
+			  <p>The AeroPress is the newest of the hand brew methods. Developed by 
+			     Alan Adler in 2005 it has taken the specialty brewing scene by storm. Praised
+			     for its fast brew time and the smooth final product, the AeroPress is
+			     a valuable addition for any coffee enthusiast, and at a price of only
+			     <a href="http://amzn.to/1pD7bhs">$25</a> , it is well within reach of 
+			     most consumers. <br><br></p>
+			     
+			     <iframe width="560" height="315" src="//www.youtube.com/embed/Wi3csqWdLNY" frameborder="0" allowfullscreen></iframe>
+			     
+			</div><!-- /accordion-inner -->
+		      </div><!-- /collapse -->
+		  </div><!-- /accordion-group -->
+		  
+		  <br>
+		
+		  <div class="accordion-group">
+		    <div class="accordion-heading">
+		      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+		        French Press
+		      </a>
+		    </div>
+		    
+		    <div id="collapseTwo" class="accordion-body collapse">
+		      <div class="accordion-inner">
+		        <p>Patented by Attilio Calimani in 1929, the French Press has been around for quite a while.
+			     By using the full immersion method where the grounds are submerged in the water for a full four minutes,
+			     you are able to extract very deep and complex flavors from the French Press. 
+			     The French Press uses a metal screen filter, much coarser than paper filters found in other devices. 
+			     This means that less is lost to the filter with the French Press, most notably the coffee oils create an emulsion with
+			     the water and add a fuller body and depth of flavor to the final product. There is a tradeoff however, the coarser filter
+			     produces a less clean cup of coffee than a paper filter and it is common to find coffee sediment in the bottom of the cup.
+			     The French Press comes in a <a href="http://amzn.to/1zciBKa">range of brands, sizes and prices.</a>
+			     <br><br></p>
+			     
+			     <iframe width="560" height="315" src="//www.youtube.com/embed/DGON7jVlm9k" frameborder="0" allowfullscreen></iframe>
+			     
+		      </div><!-- /accordion-inner -->
+		    </div><!-- /collapse -->
+		  </div><!-- /accordion-group -->
+		                
+		  <br>
+		
+		  <div class="accordion-group">
+		    <div class="accordion-heading">
+		      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+		        Pour Over
+		      </a>
+		    </div>
+		    <div id="collapseThree" class="accordion-body collapse">
+		      <div class="accordion-inner">
+		        <p>The pour over is the most economical of all of the hand brew methods starting at only 
+		        <a href="http://amzn.to/1z44UOK">$5.</a> Do not let the low cost fool you though, the pour over 
+		        produces one of brightest, cleanest and most lively cups of coffee you will find. Because the 
+		        pour over is not a full immersion brew like the AeroPress and the French Press, the water spends less
+		        time in contact with the beans. This makes it much harder to end up with coffee that is over extracted and
+		        bitter. 
+		        </p>
+		        <p>
+		        While we are fairly safe from over extraction with the pour over, under extraction can become a problem.
+		        The best way to ensure a properly extracted cup of coffee with the pour over is start with the right 
+		        size grounds, let the coffee bloom and spread the pours over the course of three minutes.
+		        <br><br>
+		        </p>
+		        
+		        <iframe width="560" height="315" src="//www.youtube.com/embed/YhNzGWtz0SI" frameborder="0" allowfullscreen></iframe>
+		        
+		      </div><!-- /accordion-inner -->
+		    </div><!-- /collapse -->
+		  </div><!-- /accordion-group -->
+		  
+		  
+		  <br>			
+		  
+		</div><!-- Accordion -->
+            </div>
+          </div>
+        </div><!--/ .container -->
+      </div><!--/ #features -->
+      
+  <!--END ABOUT SECTION-->
+
+
+
+  	
+
+  <!--BEGIN CONTACT SECTION-->
+  
+    <section id="contact" name="contact"></section>
+    <div id="footerwrap">
+      <div class="container">
+        	
+	<div class="col-lg-7">
+	  <u style="color:white;"><h3>Contact</h3></u>
+	  <br>
+	  <form role="form" action="index.php" method="post" enctype="plain"> 
+	    <div class="form-group">
+	      <label for="name1">Your Name</label>
+	        <input type="name" name="contactName" class="form-control" id="contactName" placeholder="Your Name" required>
+	    </div>
+	    <div class="form-group">
+	      <label for="email1">Email address</label>
+	      <input type="email" name="contactEmail" class="form-control" id="contactEmail" placeholder="Email" required>
+	    </div>
+	    <div class="form-group">
+	      <label>Your Message</label>
+	      <textarea class="form-control" name="contactMessage" rows="3" id="contactMessage"></textarea required>
+	    </div>
+	    <br>
+	    <button type="submit" class="btn btn-large btn-success" name="contactSubmit">SUBMIT</button>
+	  </form>
+	</div>
+      </div>
+    </div>
+    
+  <!--END CONTACT SECTION-->
+	
+  <div id="c">
+    <div class="container">
+      <p>
+        Project Created by 
+        <a href="https://twitter.com/rhartsock_">Ryan Hartsock</a>
+        <br>Bootstrap theme by 
+		<a href="http://www.blacktie.co">Blacktie.co</a>
+		<br>Music from
+		<a href="http://freemusicarchive.org/music/Kevin_MacLeod/">freemusicarchive.org</a>
+      </p>
+    </div>
+  </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.js"></script>
+
+	
+	
+</body>
+</html>
